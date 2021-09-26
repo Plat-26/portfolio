@@ -1,14 +1,17 @@
 {
-  "name": "dopefolio",
+  "name": "porfolio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "browserslist": [
+    "last 5 versions"
+  ],
   "engines": {
-    "node": "14.16.1"
+    "node": "14.x"
   },
   "scripts": {
     "compile:scss": "node-sass sass/main.scss css/style.css -w",
-    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.css -o css/style.css",
+    "prefix:css": "postcss css/style.css --use=autoprefixer --map=false -output=css/style.css",
     "compress:css": "node-sass css/style.css css/style.css --output-style compressed",
     "build": "npm-run-all prefix:css compress:css"
   },
